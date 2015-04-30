@@ -1,0 +1,60 @@
+<html>
+<head>
+<script>
+
+function showSuggestion(input)	
+{    
+        function getServerResponse() 
+	{
+            var xmlHttpReq = getXMLHttpRequest();
+            xmlHttpReq.onreadystatechage = function(){
+                
+                if(xmlHttpReq.readyState == 4){
+                    
+                    if(xmlHttpReq.status == 200){
+                        document.getElementById("suggestions").innerHTML = xmlHttpReq.responseText;
+                    
+                    }else{
+                        alert("HTTP error" + xmlHttpReq.status);
+                        
+                    }
+                }
+        
+        
+            };
+            
+            
+		//checking the 'readyState' and 'status' properties of the XMLHttpRequest object, set the 'suggestions' field to the response received by the server.
+	}   
+            if(input.length != 0) 	//if the input field is not empty
+            {
+            var xmlhttprequest = new XMLHttpRequest();        
+                    xmlhttprequest.onreadystatechange = getServerResponse;
+
+                    // send a GET request to the server. Send the user input as a parameter in the url. You have to use open() and send() methods here to send a request.
+
+                    xmlHttpReq.open("GET","getHint?userInput="+input,true);
+                    xmlHttpReq.send();
+    
+            }
+            else 
+            { 
+            document.getElementById("suggestions").innerHTML = "";	//if the input field is empty, suggestion field should also be empty
+            return;
+            } 
+	
+	
+}
+
+</script>
+</head>
+<body>
+
+<h3>Start typing a name below...</h3>
+
+<form> 
+<b>Name:</b> <input type="text" onkeyup="showSuggestion(this.value)">
+</form>
+<p><b>Suggestions:</b> <span id="suggestions"></span></p>
+</body>
+</html>

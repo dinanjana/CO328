@@ -1,0 +1,13 @@
+<web-app>
+
+<servlet>
+	<servlet-name>Suggestion</servlet-name>
+	<servlet-class>sBox.SuggestionServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>Suggestion</servlet-name>
+	<url-pattern>/getHint</url-pattern>
+</servlet-mapping>
+  
+</web-app>
