@@ -27,9 +27,9 @@ public class OnlineDoctorServlet extends HttpServlet {
         @Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-	String name = null;
-	String height = null;
-	String weight = null;
+	String name ;
+	String height ;
+	String weight ;
 	/* retrieve values for name, ,height and weight from the html form*/
 	String bmi;
         
