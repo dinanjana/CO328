@@ -1,0 +1,75 @@
+<web-app>
+
+<servlet>
+	<servlet-name>AddContent</servlet-name>
+	<servlet-class>model.AddContent</servlet-class>
+</servlet>
+
+<servlet>       
+        <servlet-name>Review</servlet-name>
+	<servlet-class>model.Review</servlet-class>       
+</servlet>
+
+<servlet>       
+        <servlet-name>add2Blog</servlet-name>
+	<servlet-class>model.addBlog</servlet-class>       
+</servlet>
+
+<servlet>
+	<servlet-name>Login</servlet-name>
+	<servlet-class>model.Login</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>adminLogin</servlet-name>
+	<servlet-class>model.AdminLogin</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>viewBlog</servlet-name>
+	<servlet-class>model.ViewBlog</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>showBlog</servlet-name>
+	<servlet-class>model.ShowBlog</servlet-class>
+</servlet>
+
+
+
+<servlet-mapping>
+	<servlet-name>AddContent</servlet-name>
+	<url-pattern>/new_post</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>                
+        <servlet-name>Review</servlet-name>
+	<url-pattern>/review_new_blogs</url-pattern>        
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>add2Blog</servlet-name>
+	<url-pattern>/review</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>Login</servlet-name>
+	<url-pattern>/user_login</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>adminLogin</servlet-name>
+	<url-pattern>/admin_login</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>viewBlog</servlet-name>
+	<url-pattern>/view_blogs</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>showBlog</servlet-name>
+	<url-pattern>/show_blog</url-pattern>
+</servlet-mapping>
+  
+</web-app>

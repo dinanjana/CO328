@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Please enter your credentials</div>
+        <form method="POST" action="user_login">
+            <h3>User Login</h3>
+            <p>User name and password are case sensitive</p>
+                User name: <input type="text" name="name"><br>
+                Password : <input type="password" name="password"><br>
+                
+            <input type="submit" value="Log in">
+        </form>
+        <form method="POST" action="admin_login">
+            <h3>Admin Login</h3>
+            <p>User name and password are case sensitive</p>
+                User name: <input type="text" name="name"><br>
+                Password : <input type="password" name="password"><br>
+                
+            <input type="submit" value="Log in">
+        </form>
+        <p>Or else you can view blogs </p>
+        <form method ="POST" action="view_blogs">
+            <input type="submit" value="View">
+        </form>
+    </body>
+</html>
