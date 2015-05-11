@@ -1,0 +1,2 @@
+
+Malicious SSH login attempts are always a threat to integrity of a server. This has been happening for more than 10 years now but still world havenâ??t been able to find a way to stop this once and for all. Our mission is to develop a simple tool that can be able to detect and prevent a UNIX server from such an attack. This report will show how this tool effectively detects such an attack. Further into the report will show you how this tool was created.

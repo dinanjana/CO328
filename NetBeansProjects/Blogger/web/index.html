@@ -9,8 +9,23 @@ and open the template in the editor.
         <title>Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            function showRecent()	
+            {    
+                    var xmlHttpReq = new XMLHttpRequest();        
+                    //xmlhttprequest.onreadystatechange = getServerResponse;
+                    // send a GET request to the server. Send the user input as a parameter in the url. You have to use open() and send() methods here to send a request.
+                    xmlHttpReq.open("GET","getRecent",true);
+                    xmlHttpReq.send(null);	
+                    return xmlHttpReq.responseText;
+                    document.getElementById("recent").innerHTML = xmlHttpReq.responseText;
+            }
+            
+            
+            
+        </script>
     </head>
-    <body>
+    <body onload="showRecent()">
         <div>Please enter your credentials</div>
         <form method="POST" action="user_login">
             <h3>User Login</h3>
@@ -32,5 +47,6 @@ and open the template in the editor.
         <form method ="POST" action="view_blogs">
             <input type="submit" value="View">
         </form>
+       <p id="recent"></p>     
     </body>
 </html>

@@ -4,10 +4,9 @@
  * and open the template in the editor.
  */
 
-package model;
+package model.reviewContent.comments;
 
 import control.filehandlers.FileHandler;
-import control.filehandlers.RecentBlogs;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,22 +15,19 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Dinanajana
  */
-public class addBlog extends HttpServlet {
+public class addComment extends HttpServlet{
     
-    String remv = "C:\\Users\\Dinanajana\\Documents\\NetBeansProjects\\Blogger\\src\\java\\content\\unrefferredContent\\";
-    String add = "C:\\Users\\Dinanajana\\Documents\\NetBeansProjects\\Blogger\\src\\java\\content\\refferredContent\\";
-    String [] newBlogs;
+    String remv = "C:\\Users\\Dinanajana\\Documents\\NetBeansProjects\\Blogger\\src\\java\\comments\\unreferredcomments\\";
+    String add = "C:\\Users\\Dinanajana\\Documents\\NetBeansProjects\\Blogger\\src\\java\\comments\\referrdecomments\\";
+    String [] newComments;
     
-   // RecentBlogs Rb = new RecentBlogs();
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response){
     
-    
-   @Override
-   public void doPost(HttpServletRequest request, HttpServletResponse response){
+        newComments = request.getParameterValues("comments");
        
-       newBlogs = request.getParameterValues("posts");
-       
-       if(newBlogs.length > 0){
-           for (String newBlog : newBlogs) {
+       if(newComments.length > 0){
+           for (String newBlog : newComments) {
                
                FileHandler handler = new FileHandler(remv);
                System.out.println(newBlog);
@@ -47,6 +43,8 @@ public class addBlog extends HttpServlet {
            }
        }
    
-   } 
+    
+    
+    }
     
 }

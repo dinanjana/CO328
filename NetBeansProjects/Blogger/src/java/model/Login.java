@@ -41,12 +41,8 @@ public class Login extends HttpServlet {
         
         if(Arrays.asList(userNpass).contains(combi)){
         
-            
-            //out.println("<a href =\"AdminLogin.html\">Review the blog</a></br>");
-                
             out.println("<a href = \"user_options.html\">View the blog</a></br>");
-                    
-            
+                        
         }else{
             
             out.println("<p>Not a valid usename password combination</p>");

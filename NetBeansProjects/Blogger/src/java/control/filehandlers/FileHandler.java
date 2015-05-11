@@ -106,18 +106,14 @@ public class FileHandler {
             FileReader fileReader = 
                 new FileReader(fileName);
 
-            // Always wrap FileReader in BufferedReader.
-            BufferedReader bufferedReader = 
-                new BufferedReader(fileReader);
-
-            while((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
-                content = content +"\n"+ line ;
-                
-            }    
-
-            // Always close files.
-            bufferedReader.close();            
+            try ( // Always wrap FileReader in BufferedReader.
+                    BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+                while((line = bufferedReader.readLine()) != null) {
+                    System.out.println(line);
+                    content = content +"\n"+ line ;
+                    
+                }
+            }            
         }
         catch(FileNotFoundException ex) {
             System.out.println(

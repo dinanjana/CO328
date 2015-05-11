@@ -40,6 +40,7 @@ public class AddContent extends HttpServlet {
 	out.println("<head><title>"+title+"</title></head>");
         out.println("<body><h1>"+title+"</h1>");
 	out.println("<p>" + content + "</p>");
+        out.println("<br><br><br><p><h5>Blog will be available after admin approval :) <h5></p>");
         out.println("</body>");
         out.println("</html>");
     

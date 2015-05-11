@@ -12,7 +12,11 @@ and open the template in the editor.
     </head>
     <body>
         <div>Welcome to myOwnBlogger</div>
-        <a href="AddContent.html"> Start Blogging </a><br />
         
+        
+            <input type="button" value="Start Blogging" onclick = "document.location.href = 'AddContent.html'" /><br>
+            <form  method="POST" action ="review_comment">
+                <input type="submit" value="Review comments" name ="reviewComments"/>
+            </form>
     </body>
 </html>

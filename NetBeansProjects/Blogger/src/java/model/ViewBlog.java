@@ -33,8 +33,12 @@ public class ViewBlog extends HttpServlet{
             if (listOfFiles[i].isFile()) {
                 
                 String fileName = listOfFiles[i].getName();
-                System.out.println("File " + fileName);                
+                System.out.println("File vieBlog " + fileName); 
+                
+                
                 blogNames = blogNames + "<input type =\"submit\" name =\"blog\" value="+fileName+"><br>";
+                
+                
                 
             } else if (listOfFiles[i].isDirectory()) {
         
@@ -48,6 +52,7 @@ public class ViewBlog extends HttpServlet{
     
         response.setContentType("text/html");
         request.setAttribute("result", blogNames);
+        //request.setAttribute("blog", fileName);
         request.getRequestDispatcher("Blogs.jsp").forward(request, response);
     
     }
