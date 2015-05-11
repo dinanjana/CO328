@@ -24,7 +24,9 @@ public class ShowBlog extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String URL = "C:\\Users\\Dinanajana\\Documents\\NetBeansProjects\\Blogger\\src\\java\\content\\refferredContent\\";
         String comments ="C:\\Users\\Dinanajana\\Documents\\NetBeansProjects\\Blogger\\src\\java\\comments\\referrdecomments\\";
+        
         String blogName = request.getParameter("blog");
+        String person = request.getParameter("User");
         
         URL = URL + blogName ;
         comments = comments + blogName;
@@ -36,16 +38,39 @@ public class ShowBlog extends HttpServlet {
         handler2.FileReader();
         
         String [] name = blogName.split("\\.");
-        String blog = "<h1>"+name[0]+"</h1><p>"+handler.content+"</p>";
+        
         String cmnts ="<p>"+handler2.content+"<p>";
         
-        System.out.println(blog + cmnts + "  ShowBlog");
+        if(person.equals("user")){
+            
+            
+            String blog = "<textarea name=\"title\" cols=\"20\" rows=\"1\">"+name[0]+
+                    "</textarea><p><textarea name=\"content\" cols=\"100\" rows=\"50\">"+
+                    handler.content+"</textarea></p>";
+            
+            response.setContentType("text/html");
+            request.setAttribute("result", blog);
+            request.setAttribute("blog", blogName);
+            request.setAttribute("comment", cmnts);
+            request.getRequestDispatcher("\\Edit\\editBlog.jsp").forward(request, response);
+        
+        }else{
+        
+            String blog = "<h1>"+name[0]+"</h1><p>"+handler.content+"</p>";
+            response.setContentType("text/html");
+            request.setAttribute("result", blog);
+            request.setAttribute("blog", blogName);
+            request.setAttribute("comment", cmnts);
+            request.getRequestDispatcher("ShowBlog.jsp").forward(request, response);
+            
+        }
         
         
-        response.setContentType("text/html");
-        request.setAttribute("result", blog);
-        request.setAttribute("blog", blogName);
-        request.setAttribute("comment", cmnts);
-        request.getRequestDispatcher("ShowBlog.jsp").forward(request, response);
+        
+        
+       // System.out.println(blog + cmnts + "  ShowBlog");
+        
+        
+       
     }
 }

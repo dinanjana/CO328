@@ -22,6 +22,8 @@ public class ViewBlog extends HttpServlet{
     
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        
+        String user = request.getParameter("View");
         FileHandler reviewed;
         String URL = "C:\\Users\\Dinanajana\\Documents\\NetBeansProjects\\Blogger\\src\\java\\content\\refferredContent\\";
         File folder = new File(URL);
@@ -38,6 +40,15 @@ public class ViewBlog extends HttpServlet{
                 
                 blogNames = blogNames + "<input type =\"submit\" name =\"blog\" value="+fileName+"><br>";
                 
+                if(user.equals("View the blog")){
+                    
+                    blogNames = blogNames + "<input type =\"hidden\" name =\"User\" value=\"user\"><br>";
+                    
+                }else if(user.equals("View")){
+                
+                     blogNames = blogNames + "<input type =\"hidden\" name =\"User\" value=\"\"><br>";
+                    
+                }
                 
                 
             } else if (listOfFiles[i].isDirectory()) {
@@ -52,8 +63,17 @@ public class ViewBlog extends HttpServlet{
     
         response.setContentType("text/html");
         request.setAttribute("result", blogNames);
+        
+        if(user.equals("View the blog")){
+            request.setAttribute("type", "user");
+            request.getRequestDispatcher("\\Edit\\Blogs.jsp").forward(request, response);
+            
+        }else{
+            request.setAttribute("type", "");
+            request.getRequestDispatcher("Blogs.jsp").forward(request, response);
+        }
         //request.setAttribute("blog", fileName);
-        request.getRequestDispatcher("Blogs.jsp").forward(request, response);
+        
     
     }
     

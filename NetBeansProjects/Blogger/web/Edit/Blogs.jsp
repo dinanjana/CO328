@@ -1,6 +1,6 @@
 <%-- 
     Document   : Blogs
-    Created on : May 10, 2015, 1:05:16 PM
+    Created on : May 11, 2015, 5:08:39 PM
     Author     : Dinanajana
 --%>
 
@@ -12,7 +12,7 @@
         <title>blogs</title>
     </head>
     <body>
-        <h1>These are the available blogs</h1>
+        <h1>These are the available blogs.You can view and edit content here </h1>
         
         <%
             //show the result here by extracting the attribute you set
