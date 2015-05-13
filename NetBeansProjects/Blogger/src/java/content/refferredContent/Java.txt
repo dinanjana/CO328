@@ -1,0 +1,23 @@
+
+Name
+Id
+Address
+Type
+Xcordinates
+Ycordinates
+	String
+String
+String 
+String
+Int
+Int
+
+
+getBuildEnvironmentDetails(int x, int y, JTextArea a1)
+
+giveEntityDeatails(String xoo, JTextArea a1)	
+Void
+
+
+Void
+

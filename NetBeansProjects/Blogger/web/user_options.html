@@ -11,16 +11,28 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>Welcome to myOwnBlogger</div>
+        <div><h3>Welcome to myOwnBlogger</h3></div>
         
-        
-            <input type="button" value="Start Blogging" onclick = "document.location.href = 'AddContent.html'" /><br>
-            <form  method="POST" action ="review_comment">
-                <input type="submit" value="Review comments" name ="reviewComments"/>
-            </form>
-            
-            <form  method="POST" action ="view_blogs">
-                <input type="submit" value="View the blog" name ="View"/>
-            </form>
+        <table>
+            <tr>
+                <td>
+                    <input type="button" value="Start Blogging" onclick = "document.location.href = 'AddContent.html'" /><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form  method="POST" action ="review_comment">
+                        <input type="submit" value="Review comments" name ="reviewComments"/>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form  method="POST" action ="view_blogs">
+                        <input type="submit" value="View the blog" name ="View"/>
+                    </form>
+                </td>
+            </tr>
+        </table>
     </body>
 </html>

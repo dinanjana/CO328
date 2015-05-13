@@ -38,7 +38,7 @@ public class addComment extends HttpServlet {
         handler.FileWriter();
         
         PrintWriter out = response.getWriter();
-        out.println("<h4>Your comment will appear after an user approve :)<h4>");
+        out.println("<h4>Your comment will appear after an user approve :)</h4>");
     
     }
     

@@ -28,8 +28,8 @@ public class ShowBlog extends HttpServlet {
         String blogName = request.getParameter("blog");
         String person = request.getParameter("User");
         
-        URL = URL + blogName ;
-        comments = comments + blogName;
+        URL = URL + blogName + ".txt" ;
+        comments = comments + blogName + ".txt";
         
         FileHandler handler = new FileHandler(URL);
         FileHandler handler2 = new FileHandler(comments);
@@ -44,8 +44,8 @@ public class ShowBlog extends HttpServlet {
         if(person.equals("user")){
             
             
-            String blog = "<textarea name=\"title\" cols=\"20\" rows=\"1\">"+name[0]+
-                    "</textarea><p><textarea name=\"content\" cols=\"100\" rows=\"50\">"+
+            String blog = "<textarea name=\"title\" cols=\"100\" rows=\"1\">"+name[0]+
+                    "</textarea><p><textarea name=\"content\" cols=\"100\" rows=\"20\">"+
                     handler.content+"</textarea></p>";
             
             response.setContentType("text/html");

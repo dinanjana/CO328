@@ -10,43 +10,67 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript">
+            
+            var xmlhttprequest = new XMLHttpRequest(); 
+            function getServerResponse() 
+            {
+            
+                if(xmlhttprequest.readyState == 4){
+                    
+                    if(xmlhttprequest.status == 200){
+                        document.getElementById("recent").innerHTML = xmlhttprequest.responseText;
+                    
+                    }else{
+                        alert("HTTP error" + xmlHttpReq.status);
+                        
+                    }
+                }
+            }
             function showRecent()	
             {    
-                    var xmlHttpReq = new XMLHttpRequest();        
-                    //xmlhttprequest.onreadystatechange = getServerResponse;
-                    // send a GET request to the server. Send the user input as a parameter in the url. You have to use open() and send() methods here to send a request.
-                    xmlHttpReq.open("GET","getRecent",true);
-                    xmlHttpReq.send(null);	
-                    return xmlHttpReq.responseText;
-                    document.getElementById("recent").innerHTML = xmlHttpReq.responseText;
+         
+                    xmlhttprequest.onreadystatechange = getServerResponse;
+
+                    xmlhttprequest.open("GET","getRecent",true);
+                    xmlhttprequest.send();
+    
+                    return;
             }
+
             
             
             
         </script>
     </head>
     <body onload="showRecent()">
-        <div>Please enter your credentials</div>
-        <form method="POST" action="user_login">
-            <h3>User Login</h3>
-            <p>User name and password are case sensitive</p>
-                User name: <input type="text" name="name"><br>
-                Password : <input type="password" name="password"><br>
+        <div><h3>Please enter your credentials</h3></div>
+        <table>
+            <td>
+            <form method="POST" action="user_login">
+                <h3>User Login</h3>
+                    <p>User name and password are case sensitive</p>
+                        User name: <input type="text" name="name"><br>
+                        Password : <input type="password" name="password"><br>
                 
-            <input type="submit" value="Log in">
-        </form>
-        <form method="POST" action="admin_login">
-            <h3>Admin Login</h3>
-            <p>User name and password are case sensitive</p>
-                User name: <input type="text" name="name"><br>
-                Password : <input type="password" name="password"><br>
+                    <input type="submit" value="Log in">
+            </form>
+            
+            <form method="POST" action="admin_login">
+                <h3>Admin Login</h3>
+                    <p>User name and password are case sensitive</p>
+                    
+                        User name: <input type="text" name="name"><br>
+                        Password : <input type="password" name="password"><br>
                 
-            <input type="submit" value="Log in">
-        </form>
-        <p>Or else you can view blogs </p>
-        <form method ="POST" action="view_blogs">
-            <input type="submit" name="View" value="View"/>
-        </form>
-       <p id="recent"></p>     
+                    <input type="submit" value="Log in">
+            </form>
+            <h3>Or else you can view blogs </h3>
+            <form method ="POST" action="view_blogs">
+                <input type="submit" name="View" value="View"/>
+            </form>
+            </td>
+        </table>
+        <h3>Recent Blogs</h3>
+        <form method="POST" action="show_blog"><p id="recent"></p></form>     
     </body>
 </html>

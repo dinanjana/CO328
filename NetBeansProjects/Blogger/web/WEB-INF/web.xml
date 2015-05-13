@@ -35,10 +35,7 @@
 	<servlet-class>model.ShowBlog</servlet-class>
 </servlet>
 
-<servlet>
-	<servlet-name>recentBlogs</servlet-name>
-	<servlet-class>model.SendRecent</servlet-class>
-</servlet>
+
 
 <servlet>
 	<servlet-name>addComment</servlet-name>
@@ -53,6 +50,11 @@
 <servlet>
 	<servlet-name>addComment2Blog</servlet-name>
 	<servlet-class>model.reviewContent.comments.addComment</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>recentBlog</servlet-name>
+	<servlet-class>model.recentBlogs.showRecentBlogs</servlet-class>
 </servlet>
 
 
@@ -92,10 +94,7 @@
 	<url-pattern>/show_blog</url-pattern>
 </servlet-mapping>
 
-<servlet-mapping>
-	<servlet-name>recentBlogs</servlet-name>
-	<url-pattern>/getRecent</url-pattern>
-</servlet-mapping>
+
 
 <servlet-mapping>
 	<servlet-name>addComment</servlet-name>
@@ -110,6 +109,11 @@
 <servlet-mapping>
 	<servlet-name>addComment2Blog</servlet-name>
 	<url-pattern>/review_finalized</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>recentBlog</servlet-name>
+	<url-pattern>/getRecent</url-pattern>
 </servlet-mapping>
   
 </web-app>

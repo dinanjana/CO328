@@ -29,37 +29,32 @@ public class ViewBlog extends HttpServlet{
         File folder = new File(URL);
         File[] listOfFiles = folder.listFiles();
         
-        String blogNames="<form method=\"POST\" action=\"show_blog\">";
+        String blogNames=""; 
 
-        for (int i = 0; i < listOfFiles.length; i++) {
-            if (listOfFiles[i].isFile()) {
-                
-                String fileName = listOfFiles[i].getName();
-                System.out.println("File vieBlog " + fileName); 
-                
-                
-                blogNames = blogNames + "<input type =\"submit\" name =\"blog\" value="+fileName+"><br>";
-                
-                if(user.equals("View the blog")){
-                    
-                    blogNames = blogNames + "<input type =\"hidden\" name =\"User\" value=\"user\"><br>";
-                    
-                }else if(user.equals("View")){
-                
-                     blogNames = blogNames + "<input type =\"hidden\" name =\"User\" value=\"\"><br>";
-                    
+        for (File listOfFile : listOfFiles) {
+            if (listOfFile.isFile()) {
+                String fileName = listOfFile.getName();
+                System.out.println("File vieBlog " + fileName);
+                blogNames= blogNames + "<form method=\"POST\"action=\"show_blog?id="+fileName.split("\\.")[0]+"\">";
+                blogNames = blogNames + "<input type =\"submit\" name =\"blog\" value="+fileName.split("\\.")[0]+"><br>";
+                //blogNames = blogNames + "</form>";
+                switch (user) {
+                    case "View the blog":
+                        blogNames = blogNames + "<input type =\"hidden\" name =\"User\" value=\"user\"><br>";
+                        break;
+                    case "View":
+                        blogNames = blogNames + "<input type =\"hidden\" name =\"User\" value=\"\"><br>";
+                        
+                        //blogNames = blogNames + "</form>";
+                        break;                    
                 }
-                
-                
-            } else if (listOfFiles[i].isDirectory()) {
-        
-            System.out.println("Directory " + listOfFiles[i].getName());
-            
+                blogNames = blogNames + "</form>";
+            } else if (listOfFile.isDirectory()) {
+                System.out.println("Directory " + listOfFile.getName());
             }
-            
         }
         
-        blogNames = blogNames + "</form>";
+         //blogNames = blogNames + "</form>";
     
         response.setContentType("text/html");
         request.setAttribute("result", blogNames);

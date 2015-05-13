@@ -1,0 +1,34 @@
+
+Here are my online notes for my Calculus III course that I teach here at Lamar University.  Despite the fact that these are my â??class notesâ??, they should be accessible to anyone wanting to learn Calculus III or needing a refresher in some of the topics from the class.    
+These notes do assume that the reader has a good working knowledge of Calculus I topics including limits, derivatives and integration.  It also assumes that the reader has a good knowledge of several Calculus II topics including some integration techniques, parametric equations, vectors, and knowledge of three dimensional space.  
+Here are a couple of warnings to my students who may be here to get a copy of what happened on a day that you missed.    
+1. Because I wanted to make this a fairly complete set of notes for anyone wanting to learn calculus I have included some material that I do not usually have time to cover in class and because this changes from semester to semester it is not noted here.  You will need to find one of your fellow class mates to see if there is something in these notes that wasnâ??t covered in class.  
+2. In general I try to work problems in class that are different from my notes.  However, with Calculus III many of the problems are difficult to make up on the spur of the moment and so in this class my class work will follow these notes fairly close as far as worked problems go.  With that being said I will, on occasion, work problems off the top of my head when I can to provide more examples than just those in my notes.  Also, I often donâ??t have time in class to work all of the problems in the notes and so you will find that some sections contain problems that werenâ??t worked in class due to time restrictions.  
+3. Sometimes questions in class will lead down paths that are not covered here.  I try to anticipate as many of the questions as possible in writing these up, but the reality is that I canâ??t anticipate all the questions.  Sometimes a very good question gets asked in class that leads to insights that Iâ??ve not included here.  You should always talk to someone who was in class on the day you missed and compare these notes to their notes and see what the differences are.  
+4. This is somewhat related to the previous three items, but is important enough to merit its own item.  THESE NOTES ARE NOT A SUBSTITUTE FOR ATTENDING CLASS!!  Using these notes as a substitute for class is liable to get you in trouble. As already noted not everything in these notes is covered in class and often material or insights not in these notes is covered in class.  
+Â© 2007 Paul Dawkins ii http://tutorial.math.lamar.edu/terms.aspx  
+Calculus III   
+Line Integrals  
+ Introduction In this section we are going to start looking at Calculus with vector fields (which weâ??ll define in the first section).  In particular we will be looking at a new type of integral, the line integral and some of the interpretations of the line integral.  We will also take a look at one of the more important theorems involving line integrals, Greenâ??s Theorem.  
+Here is a listing of the topics covered in this chapter.  
+Vector Fields â?? In this section we introduce the concept of a vector field.  
+Line Integrals â?? Part I â?? Here we will start looking at line integrals.  In particular we will look at line integrals with respect to arc length.  
+Line Integrals â?? Part II â?? We will continue looking at line integrals in this section.  Here we will be looking at line integrals with respect to x, y, and/or z.  
+Line Integrals of Vector Fields â?? Here we will look at a third type of line integrals, line integrals of vector fields.  
+Fundamental Theorem for Line Integrals â?? In this section we will look at a version of the fundamental theorem of calculus for line integrals of vector fields.  
+Conservative Vector Fields â?? Here we will take a somewhat detailed look at conservative vector fields and how to find potential functions.  
+Greenâ??s Theorem â?? We will give Greenâ??s Theorem in this section as well as an interesting application of Greenâ??s Theorem.  
+Curl and Divergence â?? In this section we will introduce the concepts of the curl and the divergence of a vector field.  We will also give two vector forms of Greenâ??s Theorem.   
+Â© 2007 Paul Dawkins 3 http://tutorial.math.lamar.edu/terms.aspx  
+Calculus III 
+ Vector Fields We need to start this chapter off with the definition of a vector field as they will be a major component of both this chapter and the next.  Letâ??s start off with the formal definition of a vector field.  
+Definition A vector field on two (or three) dimensional space is a function F ï?²
+ that assigns to each point 
+( ) , xy (or ( ) ,, xyz) a two (or three dimensional) vector given by ( ) , Fxy ï?²
+ (or ( ) ,, Fxyz ï?²
+).  
+That may not make a lot of sense, but most people do know what a vector field is, or at least theyâ??ve seen a sketch of a vector field.  If youâ??ve seen a current sketch giving the direction and magnitude of a flow of a fluid or the direction and magnitude of the winds then youâ??ve seen a sketch of a vector field.  
+The standard notation for the function F ï?²
+ is,  ( ) ( ) ( ) ( ) ( ) ( ) ( ) , , , , , , , , , , , F x y P x y i Q x y j F x y z P x y z i Q x y z j R x y z k = + =++ ï?² ï?²ï?² ï?²ï?² ï?²ï?² depending on whether or not weâ??re in two or three dimensions.  The function P, Q, R (if it is present) are sometimes called scalar functions.  
+Letâ??s take a quick look at a couple of examples.  Example 1  Sketch each of the following direction fields. (a) ( ) , F x y yi x j =â?? + ï?² ï?²ï?²   [Solution] (b) ( ), , 2 2 2 F x y z xi y j xk =â??â?? ï?²ï?² ï?²ï?²   [Solution] Solution (a) ( ) , F x y yi x j =â?? + ï?² ï?²ï?²  
+Okay, to graph the vector field we need to get some â??valuesâ?? of the function.  This means plugging in some points into the function.  Here are a couple of evaluations.  1 1 1 1 , 2 2 2 2 1 1 1 1 1 1 , 2 2 2 2 2 2 3 1 1 3 , 2 4 4 2 F i j F ijij F i j ï£«ï£¶=â?? + ï£¬ï£· ï£­ï£¸ ï£« ï£¶ ï£« ï£¶ â?? =â?? â?? + = + ï£¬ ï£· ï£¬ ï£· ï£­ ï£¸ ï£­ ï£¸ ï£«ï£¶=â?? + ï£¬ï£· ï£­ï£¸ ï?² ï?²ï?² ï?² ï?²ï?²ï?²ï?² ï?² ï?²ï?²  So, just what do these evaluations tell us?  Well the first one tells us that at the point ( ) 11 22 , we will plot the vector 11 22 ij â??+ ï?²ï?² .  Likewise, the third evaluation tells us that at the point ( ) 3 1 24 , we will plot the vector 3 
